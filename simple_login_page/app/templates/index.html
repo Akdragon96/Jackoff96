@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <main class="auth-shell">
+      <section class="auth-panel" aria-label="Authentication">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">A</div>
+          <div>
+            <p class="eyebrow">Secure Access</p>
+            <h1>Welcome</h1>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Authentication forms">
+          <button class="tab active" id="loginTab" type="button" role="tab" aria-selected="true">
+            Login
+          </button>
+          <button class="tab" id="registerTab" type="button" role="tab" aria-selected="false">
+            Register
+          </button>
+        </div>
+
+        <form class="auth-form active" id="loginForm" autocomplete="on">
+          <label for="loginIdentifier">Email or username</label>
+          <input id="loginIdentifier" name="identifier" type="text" autocomplete="username" required />
+
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password" required />
+
+          <button class="primary-button" type="submit">Login</button>
+        </form>
+
+        <form class="auth-form" id="registerForm" autocomplete="on">
+          <label for="registerUsername">Username</label>
+          <input id="registerUsername" name="username" type="text" autocomplete="username" minlength="3" required />
+
+          <label for="registerEmail">Email</label>
+          <input id="registerEmail" name="email" type="email" autocomplete="email" required />
+
+          <label for="registerPassword">Password</label>
+          <input id="registerPassword" name="password" type="password" autocomplete="new-password" minlength="8" required />
+
+          <button class="primary-button" type="submit">Create account</button>
+        </form>
+
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+
+        <section class="account" id="account" hidden>
+          <div>
+            <p class="eyebrow">Signed in as</p>
+            <h2 id="accountName"></h2>
+            <p id="accountEmail"></p>
+          </div>
+          <button class="secondary-button" id="logoutButton" type="button">Logout</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
