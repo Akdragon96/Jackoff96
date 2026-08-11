@@ -7,9 +7,16 @@ A small Dockerized login and register app with:
 - MySQL database
 - Nginx reverse proxy
 
+## Clone Repository
+
+```bash
+git clone https://github.com/hello-coder99/Tools-repo
+```
+
 ## Run
 
 ```bash
+cd simple_login_page
 docker compose up --build
 ```
 
